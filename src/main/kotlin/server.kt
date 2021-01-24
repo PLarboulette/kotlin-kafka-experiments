@@ -7,6 +7,7 @@ import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import kotlinx.html.*
 import io.ktor.gson.*
+import models.Town
 
 fun HTML.index() {
     head {
@@ -18,19 +19,6 @@ fun HTML.index() {
         }
     }
 }
-
-fun HTML.kafka() {
-    head {
-        title("Hello from Kafka page!")
-    }
-    body {
-        div {
-            +"Hello from Kafka page"
-        }
-    }
-}
-
-data class Town(val name: String)
 
 fun Application.module() {
     install(DefaultHeaders)
